@@ -1,6 +1,9 @@
 import json
 import sys
 
+import json
+import sys
+
 from experiments.model import load_instance_from_json
 from exact_bb.solver import solve as solve_bb
 from geo_heuristic.solver import solve as solve_geo
@@ -13,7 +16,7 @@ def load_instance(path):
     return load_instance_from_json(data)
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) < 2:
         print("Uso: python main.py instances/inst_test.json")
         sys.exit(1)
@@ -28,3 +31,7 @@ if __name__ == "__main__":
     solve_bb(instance)
     solve_geo(instance)
     solve_meta(instance)
+
+
+if __name__ == "__main__":
+    main()

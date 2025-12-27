@@ -1,4 +1,6 @@
 from math import sqrt
+from experiments.geometry import segment_intersects_polygon
+
 
 
 class Node:
@@ -79,3 +81,19 @@ def route_cost(route, instance):
         total_battery += btry
 
     return total_dist, total_risk, total_battery
+ 
+def edge_is_valid(node_a, node_b, no_fly_zones):
+    """
+    Devuelve True si el segmento entre node_a y node_b
+    NO cruza ninguna zona no-fly.
+    """
+    p1 = {"x": node_a.x, "y": node_a.y}
+    p2 = {"x": node_b.x, "y": node_b.y}
+
+    for zone in no_fly_zones:
+        if segment_intersects_polygon(p1, p2, zone.vertices):
+            return False
+
+    return True
+
+
