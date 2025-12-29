@@ -1,0 +1,41 @@
+{
+  "name": "inst_15",
+  "hub": 0,
+  "nodes": [
+    { "id": 0, "x": 0, "y": 0, "type": "hub" },
+    { "id": 1, "x": 8, "y": 12, "type": "delivery" },
+    { "id": 2, "x": 20, "y": 5, "type": "delivery" },
+    { "id": 3, "x": 15, "y": 25, "type": "delivery" },
+    { "id": 4, "x": 30, "y": 10, "type": "delivery" },
+    { "id": 5, "x": 40, "y": 20, "type": "delivery" },
+    { "id": 6, "x": 12, "y": 35, "type": "delivery" },
+    { "id": 7, "x": 25, "y": 30, "type": "delivery" },
+    { "id": 8, "x": 45, "y": 15, "type": "delivery" },
+    { "id": 9, "x": 5, "y": 28, "type": "delivery" },
+    { "id": 10, "x": 18, "y": 40, "type": "delivery" },
+    { "id": 11, "x": 32, "y": 22, "type": "delivery" },
+    { "id": 12, "x": 38, "y": 35, "type": "delivery" },
+    { "id": 13, "x": 10, "y": 45, "type": "delivery" },
+    { "id": 14, "x": 28, "y": 42, "type": "delivery" }
+  ],
+  "no_fly_zones": [
+    [
+      { "x": 10, "y": 10 },
+      { "x": 18, "y": 10 },
+      { "x": 18, "y": 18 },
+      { "x": 10, "y": 18 }
+    ],
+    [
+      { "x": 25, "y": 5 },
+      { "x": 33, "y": 5 },
+      { "x": 33, "y": 12 },
+      { "x": 25, "y": 12 }
+    ],
+    [
+      { "x": 20, "y": 28 },
+      { "x": 28, "y": 28 },
+      { "x": 28, "y": 36 },
+      { "x": 20, "y": 36 }
+    ]
+  ]
+}

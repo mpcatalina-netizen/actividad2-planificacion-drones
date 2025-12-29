@@ -1,0 +1,56 @@
+{
+  "name": "inst_25",
+  "hub": 0,
+  "nodes": [
+    { "id": 0, "x": 0, "y": 0, "type": "hub" },
+
+    { "id": 1, "x": 8, "y": 5, "type": "delivery" },
+    { "id": 2, "x": 15, "y": 10, "type": "delivery" },
+    { "id": 3, "x": 22, "y": 6, "type": "delivery" },
+    { "id": 4, "x": 30, "y": 12, "type": "delivery" },
+    { "id": 5, "x": 40, "y": 8, "type": "delivery" },
+
+    { "id": 6, "x": 10, "y": 20, "type": "delivery" },
+    { "id": 7, "x": 20, "y": 22, "type": "delivery" },
+    { "id": 8, "x": 32, "y": 25, "type": "delivery" },
+    { "id": 9, "x": 45, "y": 18, "type": "delivery" },
+
+    { "id": 10, "x": 5, "y": 30, "type": "delivery" },
+    { "id": 11, "x": 15, "y": 35, "type": "delivery" },
+    { "id": 12, "x": 25, "y": 32, "type": "delivery" },
+    { "id": 13, "x": 35, "y": 38, "type": "delivery" },
+    { "id": 14, "x": 48, "y": 30, "type": "delivery" },
+
+    { "id": 15, "x": 8, "y": 42, "type": "delivery" },
+    { "id": 16, "x": 18, "y": 45, "type": "delivery" },
+    { "id": 17, "x": 28, "y": 40, "type": "delivery" },
+    { "id": 18, "x": 38, "y": 45, "type": "delivery" },
+    { "id": 19, "x": 50, "y": 42, "type": "delivery" },
+
+    { "id": 20, "x": 12, "y": 15, "type": "delivery" },
+    { "id": 21, "x": 22, "y": 18, "type": "delivery" },
+    { "id": 22, "x": 30, "y": 20, "type": "delivery" },
+    { "id": 23, "x": 42, "y": 12, "type": "delivery" },
+    { "id": 24, "x": 18, "y": 28, "type": "delivery" }
+  ],
+  "no_fly_zones": [
+    [
+      { "x": 12, "y": 10 },
+      { "x": 20, "y": 10 },
+      { "x": 20, "y": 18 },
+      { "x": 12, "y": 18 }
+    ],
+    [
+      { "x": 30, "y": 15 },
+      { "x": 38, "y": 15 },
+      { "x": 38, "y": 23 },
+      { "x": 30, "y": 23 }
+    ],
+    [
+      { "x": 20, "y": 32 },
+      { "x": 28, "y": 32 },
+      { "x": 28, "y": 40 },
+      { "x": 20, "y": 40 }
+    ]
+  ]
+}
