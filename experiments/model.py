@@ -31,14 +31,14 @@ class DroneInstance:
 
 
 def load_instance_from_json(data):
-    nodes = {}
+    nodes = []
     for n in data["nodes"]:
-        nodes[n["id"]] = Node(
+        nodes.append(Node(
             node_id=n["id"],
             x=n["x"],
             y=n["y"],
             node_type=n["type"]
-        )
+        ))
 
     zones = []
     for zone in data.get("no_fly_zones", []):
@@ -50,6 +50,7 @@ def load_instance_from_json(data):
         hub_id=data["hub"],
         no_fly_zones=zones
     )
+
 
 
 def edge_cost(node_a, node_b):

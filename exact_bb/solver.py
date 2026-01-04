@@ -75,7 +75,7 @@ def branch_and_bound(instance, current_route, visited, pareto):
 
     debug(f"\n[EXPAND] Expandiendo desde nodo {last_node_id}. Visitados: {visited}")
 
-    for node_id, node in instance.nodes.items():
+    for node_id, node in enumerate(instance.nodes):
         if node_id in visited:
             continue
 

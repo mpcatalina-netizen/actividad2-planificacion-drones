@@ -11,42 +11,44 @@ def solve(instance):
     nodes = instance.nodes
     hub = instance.hub_id
 
-    unvisited = set(nodes.keys())
+    # Ahora nodes es una lista → IDs 0..N-1
+    unvisited = set(range(len(nodes)))
     unvisited.remove(hub)
 
     route = [hub]
     current = hub
 
     while unvisited:
-        current_node = nodes[current]
+        best = None
+        best_dist = float("inf")
 
-        # buscar el nodo válido más cercano
-        candidates = []
-        for node_id in unvisited:
-            node = nodes[node_id]
-            if edge_is_valid(current_node, node, instance.no_fly_zones):
-                dist = current_node.distance_to(node)
-                candidates.append((dist, node_id))
+        for nxt in unvisited:
+            # Usamos la función edge_is_valid, no un método del instance
+            if not edge_is_valid(nodes[current], nodes[nxt], instance.no_fly_zones):
+                continue
 
-        if not candidates:
+            d = nodes[current].distance_to(nodes[nxt])
+            if d < best_dist:
+                best_dist = d
+                best = nxt
+
+        if best is None:
             print("[Geo Heuristic] No hay aristas válidas desde", current)
-            return []
+            return []  # sin solución
 
-        _, next_node = min(candidates)
-        route.append(next_node)
-        unvisited.remove(next_node)
-        current = next_node
+        route.append(best)
+        unvisited.remove(best)
+        current = best
 
-    # volver al hub
+    # Volver al hub si es válido
     if edge_is_valid(nodes[current], nodes[hub], instance.no_fly_zones):
         route.append(hub)
     else:
         print("[Geo Heuristic] No se puede volver al hub")
         return []
 
-    cost = route_cost(route, instance)
+    # Coste en formato vector
+    dist, risk, batt = route_cost(route, instance)
 
-    print("[Geo Heuristic] Ruta:", route)
-    print("[Geo Heuristic] Coste:", cost)
-
-    return [(route, cost)]
+    # Formato estándar: [(ruta, [dist, risk, batt])]
+    return [(route, [dist, risk, batt])]
